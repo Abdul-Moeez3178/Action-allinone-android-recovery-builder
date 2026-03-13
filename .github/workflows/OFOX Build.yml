@@ -164,9 +164,7 @@ jobs:
 
     - name: Chmod a custom mkbootimg
       run: |
-        chmod +x ${{ github.event.inputs.DEVICE_PATH }}/mkbootimg
-      working-directory: ${{ steps.pwd.outputs.workspace-folder }}
-      continue-on-error: true
+        chmod +x ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}/${{ github.event.inputs.DEVICE_PATH }}/mkbootimg
 
     - name: Getting AVBTool
       run: |
