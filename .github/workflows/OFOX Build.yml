@@ -179,6 +179,11 @@ jobs:
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
       continue-on-error: true
 
+   - name: Getting libc++
+     run: |
+       sudo apt update
+       DEBIAN_FRONTEND=noninteractive sudo apt install -yq libc++1 libc++abi1
+
     - name: Getting AVBTool
       run: |
         wget -O /usr/local/bin/avbtool https://raw.githubusercontent.com/Galaxy-MT6768/Galaxy_Recovery-Builder/main/files/bin/avbtool
