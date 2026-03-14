@@ -188,8 +188,6 @@ jobs:
       run: |
         wget -O /usr/local/bin/avbtool https://raw.githubusercontent.com/Galaxy-MT6768/Galaxy_Recovery-Builder/main/files/bin/avbtool
         chmod +x /usr/local/bin/avbtool
-        echo "AVBTool version:"
-        avbtool version
 
     - name: Set Swap Space
       uses: pierotofy/set-swap-space@master
