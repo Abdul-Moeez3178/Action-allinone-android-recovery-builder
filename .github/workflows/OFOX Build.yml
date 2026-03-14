@@ -179,15 +179,12 @@ jobs:
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
       continue-on-error: true
 
-
     - name: Getting AVBTool
       run: |
-        cd ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
-        mkdir -p out/host/linux-x86/bin
-        wget -P out/host/linux-x86/bin https://raw.githubusercontent.com/Galaxy-MT6768/Galaxy_Recovery-Builder/main/files/bin/avbtool
-        chmod +x out/host/linux-x86/bin/avbtool
-        ls out/host/linux-x86/bin/
-      working-directory: ${{ steps.pwd.outputs.workspace-folder }}
+        wget -O /usr/local/bin/avbtool https://raw.githubusercontent.com/Galaxy-MT6768/Galaxy_Recovery-Builder/main/files/bin/avbtool
+        chmod +x /usr/local/bin/avbtool
+        echo "AVBTool version:"
+        avbtool version
 
     - name: Set Swap Space
       uses: pierotofy/set-swap-space@master
@@ -200,6 +197,7 @@ jobs:
         set +e
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
+        export AVBTOOL=$(which avbtool)
         set -e
         lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make clean && make adbd ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
