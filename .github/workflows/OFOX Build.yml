@@ -179,10 +179,10 @@ jobs:
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
       continue-on-error: true
 
-   - name: Getting libc++
-     run: |
-       sudo apt update
-       DEBIAN_FRONTEND=noninteractive sudo apt install -yq libc++1 libc++abi1
+    - name: Getting libc++
+      run: |
+        sudo apt update
+        DEBIAN_FRONTEND=noninteractive sudo apt install -yq libc++1 libc++abi1
 
     - name: Getting AVBTool
       run: |
