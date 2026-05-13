@@ -24,15 +24,15 @@ on:
       DEVICE_TREE_URL:
         description: 'DEVICE_TREE_URL'
         required: true
-        default: 'https://github.com/Ridhoardhiansyah7/twrp_device_realme_narzo_50i_c11_2021'
+        default: 'https://gitlab.com/rama-firmware-dumps/infinix/Infinix-X6871_dump.git
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
-        default: 'android-12.1'
+        default: 'master'
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
-        default: 'device/realme/RMX3235'
+        default: 'device/infinix/X6871'
       COMMON_TREE_URL:
         description: 'COMMON_TREE_URL (if no common tree, leave blank)'
         required: false
@@ -42,15 +42,15 @@ on:
       DEVICE_NAME:
         description: 'DEVICE_NAME'
         required: true
-        default: 'RMX3235'
+        default: 'X6871'
       MAKEFILE_NAME:
         description: 'MAKEFILE_NAME'
         required: true
-        default: 'pbrp_RMX3235'
+        default: 'pbrp_X6871'
       BUILD_TARGET:
         description: 'BUILD_TARGET'
         required: true
-        default: 'boot'
+        default: 'vendorboot'
         type: choice
         options:
           - recovery
