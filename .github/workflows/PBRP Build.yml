@@ -24,7 +24,7 @@ on:
       DEVICE_TREE_URL:
         description: 'DEVICE_TREE_URL'
         required: true
-        default: 'https://gitlab.com/rama-firmware-dumps/infinix/Infinix-X6871_dump.git
+        default: 'https://gitlab.com/rama-firmware-dumps/infinix/Infinix-X6871_dump.git'
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
